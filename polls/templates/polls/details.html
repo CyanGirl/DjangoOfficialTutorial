@@ -1,0 +1,32 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<body>
+  <br /><br /><br />
+
+  <h1>{{question.ques}}</h1>
+
+  {%if error_message%}
+  <p><strong>{{error_message}}</strong></p>
+  {%endif%}
+
+  <!--Specifying as to where to submit the form-->
+  <form action="{%url 'polls:votes' question.id %}" method="POST">
+    {%csrf_token%} {%for choices in question.choices_set.all%}
+    <input
+      type="radio"
+      name="choices"
+      id="choices{{forloop.counter}}"
+      value="{{choices.id}}"
+    />
+    <label for="choices{{forloop.counter}}">{{choices.choice}}</label>
+    <br />
+    {%endfor%}
+    <br /><br />
+    <input type="submit" value="votes" class="btn" />
+  </form>
+
+  <br />
+  <br />
+  <a href="{%url 'polls:index' %}">Go back to Polls!</a>
+</body>

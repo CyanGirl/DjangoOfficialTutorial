@@ -1,0 +1,25 @@
+li a {
+  color: rgb(228, 183, 183);
+}
+body {
+  background: url("images/wall23.jpg") no-repeat;
+  font-size: 20px;
+  width: 75vw;
+  height: 100vh;
+  background-size: cover;
+  margin: auto;
+  color: rgb(228, 183, 183);
+}
+.btn {
+  padding: 6px;
+  width: 8vw;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
+  background: rgb(228, 183, 183);
+}
+.btn:hover {
+  background: rgb(196, 120, 120);
+}
+a {
+  color: rgb(138, 85, 85);
+}
